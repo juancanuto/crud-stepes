@@ -15,6 +15,7 @@
     <table class="table">
       <thead>
         <td>Descrição</td>
+        <td>Fornecedor</td>
         <td>Ações</td>
       </thead>
       <tbody>
@@ -22,6 +23,9 @@
           <tr>
             <td>
               {{ produto.descricao }}
+            </td>
+            <td>
+              {{ produto.fornecedor }}
             </td>
             <td>
               <a href="{% url 'fornecedor:editar_produto' pk=produto.id %}">Editar</a>

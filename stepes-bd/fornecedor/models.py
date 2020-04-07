@@ -14,13 +14,14 @@ class Representante(models.Model):
     cpf = models.CharField(max_length=200)
     nome = models.CharField(max_length=200)
     contato = models.CharField(max_length=200)
-    fornecedor = models.CharField(max_length=200)
+    fornecedor = models.ForeignKey(Fornecedor, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome
 
 class Produto(models.Model):
     descricao = models.CharField(max_length=200)
+    fornecedor = models.ForeignKey(Fornecedor, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.descricao
